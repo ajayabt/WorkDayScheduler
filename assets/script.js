@@ -26,5 +26,35 @@ $(document).ready(function() {
   
       container.append(timeBlock);
     }
-  
+    $('.time-block').each(function() {
+        const blockHour = parseInt($(this).find('.saveBtn').data('hour'));
+        const currentHour = dayjs().hour();
     
+        if (blockHour < currentHour) {
+          $(this).find('textarea').addClass('past');
+        } else if (blockHour === currentHour) {
+          $(this).find('textarea').addClass('present');
+        } else {
+          $(this).find('textarea').addClass('future');
+        }
+    
+        // Load from localStorage
+        const savedEvent = localStorage.getItem(`event-${blockHour}`);
+        if (savedEvent) {
+          $(this).find('textarea').val(savedEvent);
+        }
+      });
+    
+      // Save button 
+      $('.saveBtn').on('click', function() {
+        const hour = $(this).data('hour');
+        const event = $(`#textarea-${hour}`).val();
+    
+        // Save to localStorage
+        localStorage.setItem(`event-${hour}`, event);
+      });
+    });
+    
+    function formatHour(hour) {
+      return dayjs().hour(hour).format('h A');
+    }
