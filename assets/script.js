@@ -2,7 +2,7 @@
 
 $('#currentDay').text(dayjs().format('dddd, MMMM D'));
 
-
+//creating and appending blocks and save button
 $(document).ready(function() {
     const businessHoursStart = 9; 
     const businessHoursEnd = 17; 
@@ -26,6 +26,8 @@ $(document).ready(function() {
   
       container.append(timeBlock);
     }
+
+    //timeblock colour coding
     $('.time-block').each(function() {
         const blockHour = parseInt($(this).find('.saveBtn').data('hour'));
         const currentHour = dayjs().hour();
@@ -49,9 +51,21 @@ $(document).ready(function() {
       $('.saveBtn').on('click', function() {
         const hour = $(this).data('hour');
         const event = $(`#textarea-${hour}`).val();
-    
+      
         // Save to localStorage
         localStorage.setItem(`event-${hour}`, event);
+      
+        // Save message
+        const savedMessage = $('<div>').addClass('save-message').text('Saved!');
+        
+        $(this).closest('.time-block').append(savedMessage);
+      
+       
+        setTimeout(function() {
+          savedMessage.fadeOut('slow', function() { 
+            $(this).remove(); 
+          });
+        }, 2000);
       });
     });
     
