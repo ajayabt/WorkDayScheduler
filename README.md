@@ -14,11 +14,11 @@ I aimed to build/append the timeblocks using jQuery logic as it is what we have 
 
 ## Installation
 
-This is a webpage, the link to which can be found below: 
+This is a webpage, the link to which can be found below: https://ajayabt.github.io/WorkDayScheduler/
 
 
 
-additionally, this is the link to the github repository: 
+additionally, this is the link to the github repository: https://github.com/ajayabt/WorkDayScheduler 
 
 
 ## Usage
@@ -34,11 +34,11 @@ Starter code included the basic HTML file as well as the CSS stylings. As mentio
 
 ## Screenshot and links
 
-Screenshots:
+Screenshot: ![Alt text](assets/images/WorkScheduleScreenshot.jpeg)
 
-GitHub LINK: 
+GitHub LINK: https://github.com/ajayabt/WorkDayScheduler 
 
-Deployed app link: 
+Deployed app link: https://ajayabt.github.io/WorkDayScheduler/
 
 
 ## License

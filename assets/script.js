@@ -63,7 +63,7 @@ $(document).ready(function() {
        
         setTimeout(function() {
           savedMessage.fadeOut('slow', function() { 
-            $(this).remove(); 
+            $(this).remove();  
           });
         }, 2000);
       });
